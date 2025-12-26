@@ -829,10 +829,11 @@ flask_thread = Thread(target=run_flask, daemon=True)
 flask_thread.start()
  
 app=ApplicationBuilder().token(bot_token).build()
-application.bot.set_webhook(url=WEBHOOK_URL)
+app.bot.set_webhook(url=WEBHOOK_URL)
 app.add_handler(CommandHandler('start', start))
 app.add_handler(MessageHandler(filters.TEXT, sms))
 app.add_handler(CallbackQueryHandler(hb))
 app.run_polling()
+
 
 
