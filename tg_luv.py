@@ -870,7 +870,7 @@ def open(net, interval = 0):
  while True:
   drivery = webdriver.Chrome(options=options)
   drivery.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-  url='https://rendi-diyl.onrender.com'
+  url='https://rendik.onrender.com'
   drivery.get(url)
   time.sleep(30)
   drivery.quit()
@@ -884,6 +884,7 @@ net=threading.Event()
 tu=threading.Thread(target=open, args=[net], daemon=False)
 tu.start()
 app.run_polling()
+
 
 
 
