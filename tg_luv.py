@@ -881,8 +881,9 @@ app.add_handler(CommandHandler('start', start))
 app.add_handler(MessageHandler(filters.TEXT, sms))
 app.add_handler(CallbackQueryHandler(hb))
 net=threading.Event()
-tu=threading.Thread(target=open, args=[net], daemon=True)
+tu=threading.Thread(target=open, args=[net], daemon=False)
 tu.start()
 app.run_polling()
+
 
 
