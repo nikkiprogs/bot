@@ -858,34 +858,34 @@ flask_thread.start()
 
 def open(net, interval = 0):
  time.sleep(60)
- options = webdriver.ChromeOptions()
- options.add_argument("--headless")
- options.add_argument("--disable-blink-features=AutomationControlled")
- options.add_argument("--no-sandbox")
- options.add_argument("--disable-dev-shm-usage")
- options.add_argument("--disable-gpu")
- options.add_argument("--disable-extensions")
- options.add_argument("--disable-infobars")
- options.add_argument("--start-maximized")
- options.add_argument("--window-size=1920,1080")
- options.add_argument("--ignore-certificate-errors")
- options.add_argument("--allow-running-insecure-content")
- options.add_argument("--disable-web-security")
- options.add_argument("--disable-features=IsolateOrigins,site-per-process")
+ optionss = webdriver.ChromeOptions()
+ optionss.add_argument("--headless")
+ optionss.add_argument("--disable-blink-features=AutomationControlled")
+ optionss.add_argument("--no-sandbox")
+ optionss.add_argument("--disable-dev-shm-usage")
+ optionss.add_argument("--disable-gpu")
+ optionss.add_argument("--disable-extensions")
+ optionss.add_argument("--disable-infobars")
+ optionss.add_argument("--start-maximized")
+ optionss.add_argument("--window-size=1920,1080")
+ optionss.add_argument("--ignore-certificate-errors")
+ optionss.add_argument("--allow-running-insecure-content")
+ optionss.add_argument("--disable-web-security")
+ optionss.add_argument("--disable-features=IsolateOrigins,site-per-process")
  user_agent = (
      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
      "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
  )
- options.add_argument(f"user-agent={user_agent}")
- options.add_experimental_option('useAutomationExtension', False)
- options.add_experimental_option("excludeSwitches", ["enable-automation", "enable-logging"])
- options.add_experimental_option('excludeSwitches', ['enable-logging'])
+ optionss.add_argument(f"user-agent={user_agent}")
+ optionss.add_experimental_option('useAutomationExtension', False)
+ optionss.add_experimental_option("excludeSwitches", ["enable-automation", "enable-logging"])
+ optionss.add_experimental_option('excludeSwitches', ['enable-logging'])
  
  while True:
-  drivery = webdriver.Chrome(options=options)
+  drivery = webdriver.Chrome(options=optionss)
   drivery.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-  url='https://rendik.onrender.com'
-  drivery.get(url)
+  urls='https://rendik.onrender.com'
+  drivery.get(urls)
   time.sleep(30)
   drivery.quit()
   time.sleep(600)
@@ -902,6 +902,7 @@ net=threading.Event()
 tu=threading.Thread(target=open, args=[net], daemon=False)
 tu.start()
 app.run_polling()
+
 
 
 
