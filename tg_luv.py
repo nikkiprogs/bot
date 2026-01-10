@@ -356,157 +356,6 @@ def strt(n, no, interval = 0):
  global us_t
  p=0
  while True:
-     '''
-    ur = ("https://b2c.passport.rt.ru/auth/realms/b2c/protocol/openid-connect/auth?"
-          "response_type=code&scope=openid&client_id=lk_b2c&redirect_uri=https%3A%2F%2F"
-          "lk-api.rt.ru%2Fsso-auth%2F%3Fredirect%3Dhttps%253A%252F%252Flk.rt.ru%252F"
-          "&state=%7B%22uuid%22%3A%22EDD60ACE-7016-46A7-A715-DFE6EB7FD420%22%7D")
-    button = [
-            (By.CSS_SELECTOR, "button[type='submit']"),
-            (By.CSS_SELECTOR, "button.btn-primary"),
-            (By.XPATH, "//button[contains(text(), 'Далее') or contains(text(), 'Войти')]")
-        ]
-    login_a(phone=us_t, url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    
-    ur = "https://online.raiffeisen.ru/login/main"
-    button = [
-            (By.XPATH, "//button[normalize-space(text())='Войти']"),
-            (By.XPATH, "//button[contains(translate(normalize-space(.), 'Й', 'И'), 'Войти')]"),
-            (By.XPATH, "//button[@type='submit' and not(contains(translate(., 'Й', 'И'), 'логин'))]"),
-            (By.XPATH, "//button[contains(@class, 'btn-primary') and contains(translate(normalize-space(.), 'Й', 'И'), 'Войти')]"),
-            (By.XPATH, "//button[contains(translate(., 'Й', 'И'), 'Войти')]")
-        ]
-    login_a(phone=us_t, url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    
-    ur = "https://id.wb.ru"
-    button = [(By.CSS_SELECTOR, "button.button")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-        
-    ur = "https://id.ozon.ru"
-    button = [(By.XPATH, "//button[normalize-space()='Войти']")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    second_button_locators = [(By.XPATH, "//button[contains(translate(normalize-space(.), 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ', 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'), 'войти другим способом')]"),]
-    second_button_clicked = False
-    for locator in second_button_locators:
-            try:
-                second_button = WebDriverWait(driver, 15).until(
-                    EC.element_to_be_clickable(locator)
-                )
-                if second_button.is_displayed():
-                    scroll_to_element(driver, second_button)
-                    random_delay()
-                    second_button.click()
-                    time.sleep(10)
-                    second_button_clicked = True
-                    break
-            except TimeoutException:
-                continue
-            except Exception as e:
-                continue
-
-    if not second_button_clicked:
-            random_delay(3, 5)
-            driver.quit()
-            p=p+1
-            if n==p:
-                time.sleep(3)
-                break
-            
-    ur = ("https://id.x5.ru/auth/realms/ssox5id/protocol/openid-connect/"
-    "auth?client_id=tcx_web&response_type=code&redirect_uri=https%3A%2F%2Fwww."
-    "perekrestok.ru%2Fx5id-success&response_mode=query&scope=openid+offline_access")
-    button = [(By.CSS_SELECTOR, "button[class*='btn']")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-        
-    ur = ("https://id.x5.ru/auth/realms/ssox5id/protocol/openid-connect/auth?"
-    "client_id=x5club&redirect_uri=https%3A%2F%2Fx5club.ru%2Flk&state=057dc554"
-    "-6361-40c1-b528-638e42d609c0&response_mode=fragment&response_type=code&scope"
-    "=openid%20offline_access&nonce=8b07f29a-cf7f-41f2-8cf6-6ba2154bed21&code_"
-    "challenge=nAINW7ACZAPnz2WxCwRgR7RwPOv3rwy3kg3UYc8kcqY&"
-    "code_challenge_method=S256")
-    button = [(By.CSS_SELECTOR, "button[class*='btn']")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    
-    ur = ("https://id.x5.ru/auth/realms/ssox5id/protocol/openid-connect/auth?client_id"
-    "=tc5_site&scope=openid%20offline_access&response_type=code&redirect_uri=https%3A%2"
-    "F%2F5ka.ru%2Fapi%2Fauth%2Fcallback%2Fkeycloak&response_mode=query&state=V__HNVghWK"
-    "ozXZvlMndv-2mkLGC9kn0QHNYl_s0QFg8&code_challenge=7Jc4GPpyquADj8pJ-gRXzbd_V"
-    "dEAzRtOhxTFdVRrZ6U&code_challenge_method=S256")
-    button = [(By.CSS_SELECTOR, "button[class*='btn']")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    
-    ur = "https://www.mvideo.ru/login"
-    button = [(By.XPATH, "//button[contains(translate(., 'ПРОДОЛЖИТЬ', 'продолжить'), 'продолжить')]")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    
-    ur = "https://passport.yandex.ru/pwl-yandex/auth"
-    button = [
-            (By.XPATH, "//button[normalize-space(text())='Войти']"),
-            (By.XPATH, "//button[contains(translate(normalize-space(.), 'Й', 'И'), 'Войти')]"),
-            (By.XPATH, "//button[@type='submit' and not(contains(translate(., 'Й', 'И'), 'логин'))]"),
-            (By.XPATH, "//button[contains(@class, 'btn-primary') and contains(translate(normalize-space(.), 'Й', 'И'), 'Войти')]"),
-            (By.XPATH, "//button[contains(translate(., 'Й', 'И'), 'Войти')]")
-    ]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    
-    ur = "https://online.autofinancebank.ru/auth/main"
-    button = [(By.XPATH, "//button[normalize-space()='Войти']")]
-    login_a(phone=us_t, url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    
-    ur = "https://wink.ru/auth"
-    button = [(By.XPATH, "//button[normalize-space()='Продолжить']")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    '''
     ur = "https://tvoe.live/?accessRestriction=true"
     button = [(By.XPATH, "//button[normalize-space()='Продолжить']")]
     login_a(phone=us_t[1:], url=ur, button_locators=button)
@@ -693,7 +542,7 @@ def strt(n, no, interval = 0):
     if n==p:
         time.sleep(3)
         break
-
+        
 load_dotenv()
 bot_token=os.getenv('BOT_TOKEN')
 WEBHOOK_URL = f"https://bot-tgf.onrender.com/telegram"
@@ -903,6 +752,7 @@ net=threading.Event()
 tu=threading.Thread(target=open, args=[net], daemon=False)
 tu.start()
 app.run_polling()
+
 
 
 
