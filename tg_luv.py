@@ -356,6 +356,7 @@ def strt(n, no, interval = 0):
  global us_t
  p=0
  while True:
+     '''
     ur = ("https://b2c.passport.rt.ru/auth/realms/b2c/protocol/openid-connect/auth?"
           "response_type=code&scope=openid&client_id=lk_b2c&redirect_uri=https%3A%2F%2F"
           "lk-api.rt.ru%2Fsso-auth%2F%3Fredirect%3Dhttps%253A%252F%252Flk.rt.ru%252F"
@@ -505,7 +506,7 @@ def strt(n, no, interval = 0):
     if n==p:
         time.sleep(3)
         break
-    
+    '''
     ur = "https://tvoe.live/?accessRestriction=true"
     button = [(By.XPATH, "//button[normalize-space()='Продолжить']")]
     login_a(phone=us_t[1:], url=ur, button_locators=button)
@@ -902,6 +903,7 @@ net=threading.Event()
 tu=threading.Thread(target=open, args=[net], daemon=False)
 tu.start()
 app.run_polling()
+
 
 
 
