@@ -374,15 +374,15 @@ def strt(n, no, interval = 0):
         time.sleep(3)
         break
   
-    ur = "https://rikkopizza.ru/auth"
-    button = [(By.XPATH, "//button[normalize-space(text())='Выслать код']"),]
-    login_b(phone=us_t, url=ur, button_locators=button)
-    time.sleep(random.uniform(8, 15))
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
+    #ur = "https://rikkopizza.ru/auth"
+    #button = [(By.XPATH, "//button[normalize-space(text())='Выслать код']"),]
+    #login_b(phone=us_t, url=ur, button_locators=button)
+    #time.sleep(random.uniform(8, 15))
+    #driver.quit()
+    #p=p+1
+    #if n==p:
+        #time.sleep(3)
+        #break
   
     ur = "https://foodband.ru/profile"
     button = [(By.XPATH, "//button[normalize-space(text())='Выслать код']")]
@@ -752,6 +752,7 @@ net=threading.Event()
 tu=threading.Thread(target=open, args=[net], daemon=False)
 tu.start()
 app.run_polling()
+
 
 
 
