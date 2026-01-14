@@ -395,7 +395,7 @@ def strt(n, no, interval = 0):
     if n==p:
         time.sleep(3)
         break
-        
+        '''
     ur = "https://id.ozon.ru"
     button = [(By.XPATH, "//button[normalize-space()='Войти']")]
     login_a(phone=us_t[2:], url=ur, button_locators=button)
@@ -425,7 +425,7 @@ def strt(n, no, interval = 0):
             if n==p:
                 time.sleep(3)
                 break
-            
+            '''
     ur = ("https://id.x5.ru/auth/realms/ssox5id/protocol/openid-connect/"
     "auth?client_id=tcx_web&response_type=code&redirect_uri=https%3A%2F%2Fwww."
     "perekrestok.ru%2Fx5id-success&response_mode=query&scope=openid+offline_access")
@@ -463,7 +463,7 @@ def strt(n, no, interval = 0):
     if n==p:
         time.sleep(3)
         break
-    
+    '''
     ur = "https://www.mvideo.ru/login"
     button = [(By.XPATH, "//button[contains(translate(., 'ПРОДОЛЖИТЬ', 'продолжить'), 'продолжить')]")]
     login_a(phone=us_t[2:], url=ur, button_locators=button)
@@ -487,7 +487,7 @@ def strt(n, no, interval = 0):
     if n==p:
         time.sleep(3)
         break
-    
+    '''
     ur = "https://online.autofinancebank.ru/auth/main"
     button = [(By.XPATH, "//button[normalize-space()='Войти']")]
     login_a(phone=us_t, url=ur, button_locators=button)
@@ -865,6 +865,7 @@ app.add_handler(PreCheckoutQueryHandler(precheckout_handler))
 app.add_handler(CallbackQueryHandler(hb))
 app.add_handler(MessageHandler(filters.SUCCESSFUL_PAYMENT, successful_payment_handler))
 app.run_polling()
+
 
 
 
