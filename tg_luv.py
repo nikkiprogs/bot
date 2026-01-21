@@ -132,7 +132,7 @@ def find_phone_field_and_fill(driver, phone, timeout: int = 30) -> bool:
 
 def login_a(phone: str, url, button_locators):
     options = webdriver.ChromeOptions()
-    #options.add_argument("--headless")
+    options.add_argument("--headless")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
@@ -282,7 +282,7 @@ def find_phone_field_and_filled(driver, phone, timeout: int = 30) -> bool:
 
 def login_b(phone: str, url, button_locators):
         options = webdriver.ChromeOptions()
-        #options.add_argument("--headless")
+        options.add_argument("--headless")
         options.add_argument("--disable-blink-features=AutomationControlled")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
@@ -911,5 +911,6 @@ app.add_handler(PreCheckoutQueryHandler(precheckout_handler))
 app.add_handler(CallbackQueryHandler(hb))
 app.add_handler(MessageHandler(filters.SUCCESSFUL_PAYMENT, successful_payment_handler))
 app.run_polling()
+
 
 
